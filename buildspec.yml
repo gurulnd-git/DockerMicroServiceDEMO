@@ -11,4 +11,4 @@ phases:
 artifacts:
   files:
     - 'Dockerfile'
-    - 'target/microservice.jar'
+    - 'target/gs-spring-boot-docker.jar'
