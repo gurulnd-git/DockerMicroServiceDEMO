@@ -17,7 +17,7 @@ public class TodoDemoController {
 
     @RequestMapping("/")
     public String index(Model model) {
-        ArrayList<TodoItem> todoList = (ArrayList<TodoItem>) repository.findAll();
+        //ArrayList<TodoItem> todoList = (ArrayList<TodoItem>) repository.findAll();
         //model.addAttribute("items", todoList);
         //model.addAttribute("newitem", new TodoItem());
         //model.addAttribute("items", new TodoListViewModel(todoList));
@@ -25,8 +25,8 @@ public class TodoDemoController {
     }
     
     @RequestMapping("/hello")
-    public String index(Model model) {
-        ArrayList<TodoItem> todoList = (ArrayList<TodoItem>) repository.findAll();
+    public String hello(Model model) {
+        //ArrayList<TodoItem> todoList = (ArrayList<TodoItem>) repository.findAll();
         //model.addAttribute("items", todoList);
         //model.addAttribute("newitem", new TodoItem());
         //model.addAttribute("items", new TodoListViewModel(todoList));
