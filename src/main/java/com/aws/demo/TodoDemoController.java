@@ -19,21 +19,30 @@ public class TodoDemoController {
     public String index(Model model) {
         ArrayList<TodoItem> todoList = (ArrayList<TodoItem>) repository.findAll();
         //model.addAttribute("items", todoList);
-        model.addAttribute("newitem", new TodoItem());
-        model.addAttribute("items", new TodoListViewModel(todoList));
+        //model.addAttribute("newitem", new TodoItem());
+        //model.addAttribute("items", new TodoListViewModel(todoList));
         return "index";
     }
-
-    @RequestMapping("/add")
-    public String addTodo(@ModelAttribute TodoItem requestItem) {
-        TodoItem item = new TodoItem(requestItem.getTimeline(),requestItem.getType(),requestItem.getComplexity(), requestItem.getName());
-        repository.save(item);
-        return "redirect:/";
+    
+    @RequestMapping("/hello")
+    public String index(Model model) {
+        ArrayList<TodoItem> todoList = (ArrayList<TodoItem>) repository.findAll();
+        //model.addAttribute("items", todoList);
+        //model.addAttribute("newitem", new TodoItem());
+        //model.addAttribute("items", new TodoListViewModel(todoList));
+        return "hello welcome!!";
     }
 
-    @RequestMapping("/update")
-    public String updateTodo(@ModelAttribute TodoListViewModel requestItems,
-    @RequestParam(value="action", required=false)String action){
-        return "redirect:/";
-    }
+//     @RequestMapping("/add")
+//     public String addTodo(@ModelAttribute TodoItem requestItem) {
+//         TodoItem item = new TodoItem(requestItem.getTimeline(),requestItem.getType(),requestItem.getComplexity(), requestItem.getName());
+//         repository.save(item);
+//         return "redirect:/";
+//     }
+
+//     @RequestMapping("/update")
+//     public String updateTodo(@ModelAttribute TodoListViewModel requestItems,
+//     @RequestParam(value="action", required=false)String action){
+//         return "redirect:/";
+//     }
 }
