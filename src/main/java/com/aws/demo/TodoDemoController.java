@@ -1,16 +1,48 @@
 package com.aws.demo;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 import java.util.ArrayList;
 
-@RestController
+@Controller
 public class TodoDemoController {
+
+    @Autowired
+    private TodoItemRepository repository;
+
+    @RequestMapping("/")
+    public String index(Model model) {
+        //ArrayList<TodoItem> todoList = (ArrayList<TodoItem>) repository.findAll();
+        //model.addAttribute("items", todoList);
+        //model.addAttribute("newitem", new TodoItem());
+        //model.addAttribute("items", new TodoListViewModel(todoList));
+        return "index";
+    }
     
-    @GetMapping("/welcome")
-    public String welcomePage() {
-        return "Welcome to EBS web app";
+    @RequestMapping("/hello")
+    public String hello(Model model) {
+        //ArrayList<TodoItem> todoList = (ArrayList<TodoItem>) repository.findAll();
+        //model.addAttribute("items", todoList);
+        //model.addAttribute("newitem", new TodoItem());
+        //model.addAttribute("items", new TodoListViewModel(todoList));
+        return "hello welcome!!";
     }
 
+//     @RequestMapping("/add")
+//     public String addTodo(@ModelAttribute TodoItem requestItem) {
+//         TodoItem item = new TodoItem(requestItem.getTimeline(),requestItem.getType(),requestItem.getComplexity(), requestItem.getName());
+//         repository.save(item);
+//         return "redirect:/";
+//     }
+
+//     @RequestMapping("/update")
+//     public String updateTodo(@ModelAttribute TodoListViewModel requestItems,
+//     @RequestParam(value="action", required=false)String action){
+//         return "redirect:/";
+//     }
 }
